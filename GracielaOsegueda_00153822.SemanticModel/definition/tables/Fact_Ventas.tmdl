@@ -1,0 +1,153 @@
+table Fact_Ventas
+	lineageTag: d44e4b2a-1727-4276-b625-da204b23b45a
+
+	measure TotalSales = COUNTROWS('Fact_Ventas')
+		formatString: 0
+		lineageTag: 557a4f00-8e1a-4250-ae39-53062af89504
+
+	measure PrecioDePrecios = AVERAGE(Fact_Ventas[PrecioFinal])
+		lineageTag: 24314c3b-794b-4efb-96f4-20bf4cb28e09
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure TotaldeIngresos = ```
+			SUMX(
+			    Fact_Ventas,
+			    (Fact_Ventas[PrecioTotal]-Fact_Ventas[Costo Vehículo]))
+			
+			```
+		lineageTag: a90a31e4-f93d-4c41-947d-f46f46a11126
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column ID
+		dataType: int64
+		formatString: 0
+		lineageTag: 53c27787-0a21-4f4c-95ff-5085f5b65250
+		summarizeBy: count
+		sourceColumn: ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column datekey
+		dataType: int64
+		formatString: 0
+		lineageTag: 04075388-19c4-4fd5-8fd7-3afd8f6ed88e
+		summarizeBy: none
+		sourceColumn: datekey
+
+		annotation SummarizationSetBy = Automatic
+
+	column Canal
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ee5391e-ade7-4994-a6db-e7b14ddf0ca4
+		summarizeBy: none
+		sourceColumn: Canal
+
+		annotation SummarizationSetBy = Automatic
+
+	column Cliente
+		dataType: int64
+		formatString: 0
+		lineageTag: 91e50370-fe90-400a-9101-e828af54c9bc
+		summarizeBy: none
+		sourceColumn: Cliente
+
+		annotation SummarizationSetBy = Automatic
+
+	column Segmento
+		dataType: string
+		lineageTag: e8ed69df-7c32-4e7a-a25e-f04de83113e7
+		summarizeBy: none
+		sourceColumn: Segmento
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vehiculo
+		dataType: int64
+		formatString: 0
+		lineageTag: cdefd7ee-5eec-4a56-b3d8-f87f62492837
+		summarizeBy: none
+		sourceColumn: Vehiculo
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Costo Vehículo'
+		dataType: double
+		lineageTag: 714da558-4d27-49bc-a52d-b6c8ae99ac3d
+		summarizeBy: sum
+		sourceColumn: Costo Vehículo
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Precio Venta sin IGV'
+		dataType: double
+		lineageTag: f75e9bac-2849-457d-8659-616527985123
+		summarizeBy: sum
+		sourceColumn: Precio Venta sin IGV
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column IGV
+		dataType: double
+		lineageTag: 507b989f-1905-407b-8bf9-381859eeaef9
+		summarizeBy: sum
+		sourceColumn: IGV
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sede
+		dataType: int64
+		formatString: 0
+		lineageTag: 9b335d39-b8e0-465a-bce2-cd9542ec839d
+		summarizeBy: none
+		sourceColumn: Sede
+
+		annotation SummarizationSetBy = Automatic
+
+	column Vendedor
+		dataType: int64
+		formatString: 0
+		lineageTag: 539d0588-bf4c-437b-8dc2-c0f33e61664c
+		summarizeBy: none
+		sourceColumn: Vendedor
+
+		annotation SummarizationSetBy = Automatic
+
+	column PrecioTotal = ```
+			Fact_Ventas[Precio Venta sin IGV] 
+			```
+		lineageTag: 8189e8d2-a1f4-4865-934d-6584c6cf047a
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PrecioFinal = Fact_Ventas[Precio Venta sin IGV] + Fact_Ventas[IGV]*Fact_Ventas[Precio Venta sin IGV]
+		lineageTag: 38abd435-e7a2-48d4-a51a-66e3e49b1f45
+		summarizeBy: sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Fact_Ventas = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\osegu\Downloads\VentasVehiculos.xlsx"), null, true),
+				    Fact_Ventas_Table = Source{[Item="Fact_Ventas",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Fact_Ventas_Table,{{"ID", Int64.Type}, {"datekey", Int64.Type}, {"Canal", Int64.Type}, {"Cliente", Int64.Type}, {"Segmento", type text}, {"Vehiculo", Int64.Type}, {"Costo Vehículo", type number}, {"Precio Venta sin IGV", type number}, {"IGV", type number}, {"Sede", Int64.Type}, {"Vendedor", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

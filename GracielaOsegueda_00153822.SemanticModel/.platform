@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "GracielaOsegueda_00153822"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "6a486550-2bfb-4e30-907c-1e889ca55d40"
+  }
+}

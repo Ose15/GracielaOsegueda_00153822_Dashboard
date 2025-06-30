@@ -1,0 +1,81 @@
+relationship 5dae1d12-e196-4098-9abd-81174cdcc1ff
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Calendario.Fecha
+	toColumn: LocalDateTable_6dfa572d-69b1-4f80-be80-a9aad75dfc52.Date
+
+relationship dc2f1804-192d-4227-a8f9-eb2dfa07d79b
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Dim_Vendedor.fecha_nacimiento
+	toColumn: LocalDateTable_6df6339a-7233-4459-933d-716a79d1da5f.Date
+
+relationship 7c033945-8318-4cdd-bfc1-c8a4403854dd
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Hoja1.Fecha
+	toColumn: LocalDateTable_b39cabde-a96d-4cef-b837-b8e5f40075b8.Date
+
+relationship 58ea03b0-1d4b-4e4b-9e04-c851ba94cdac
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Hoja1.fecha_nacimiento
+	toColumn: LocalDateTable_50179232-662b-479f-99f5-627d21817d65.Date
+
+relationship AutoDetected_cd73b474-1b54-4949-9fcd-1490da6bdcdd
+	fromColumn: Fact_Ventas.datekey
+	toColumn: Dim_Calendario.datekey
+
+relationship AutoDetected_850c453a-19bd-475e-84d5-fc1322a2567a
+	fromColumn: Hoja1.datekey
+	toColumn: Dim_Calendario.datekey
+
+relationship AutoDetected_63cf08c1-f62d-487e-8ac2-05ba583c6c61
+	fromColumn: Hoja1.id_canal
+	toColumn: dim_canal.id_canal
+
+relationship AutoDetected_7cd5db07-3d8a-4766-99ac-4fe5b580c278
+	fromColumn: Hoja1.id_Cliente
+	toColumn: Dim_Cliente.id_Cliente
+
+relationship AutoDetected_01023276-7a09-43bf-9947-eecf16120a4e
+	fromColumn: fact_Presupuestos.id_sede
+	toColumn: dim_sede.id_sede
+
+relationship AutoDetected_e099f346-1d7c-4dee-8ebd-4fbd29d393e6
+	fromColumn: Hoja1.id_sede
+	toColumn: dim_sede.id_sede
+
+relationship AutoDetected_7fced1ed-5ec3-493e-be23-955b4b0db76c
+	fromColumn: Hoja1.id_vehiculo
+	toColumn: dim_vehiculo.id_vehiculo
+
+relationship AutoDetected_52e64978-876e-4af8-9126-f1395f613b63
+	fromColumn: Hoja1.ID_Vendedor
+	toColumn: Dim_Vendedor.ID_Vendedor
+
+relationship AutoDetected_bd176850-41e9-4a14-a393-3c4adabc007e
+	isActive: false
+	fromColumn: Hoja1.ppto
+	toColumn: fact_Presupuestos.ppto
+
+relationship AutoDetected_736b480d-e1d8-4b1b-9c64-947e59c99c0e
+	fromColumn: Hoja1.Imagen
+	toColumn: Fotos_Vehiculos.Imagen
+
+relationship AutoDetected_889ba71f-4452-468d-90f8-5fba57035d81
+	fromColumn: Fact_Ventas.Canal
+	toColumn: dim_canal.id_canal
+
+relationship AutoDetected_b38ae666-f0c9-4f2c-970b-dddf65bebd74
+	fromColumn: Fact_Ventas.Cliente
+	toColumn: Dim_Cliente.id_Cliente
+
+relationship AutoDetected_b7468149-b269-4f3a-982b-9ff761e1fbcc
+	fromColumn: Fact_Ventas.Sede
+	toColumn: dim_sede.id_sede
+
+relationship AutoDetected_4cfd85e3-371e-474a-bc4d-55237bc731c1
+	fromColumn: Fact_Ventas.Vehiculo
+	toColumn: dim_vehiculo.id_vehiculo
+
+relationship AutoDetected_133f50bc-6fcb-4d7f-a6f7-c67076c99e02
+	fromColumn: Fact_Ventas.Vendedor
+	toColumn: Dim_Vendedor.ID_Vendedor
+

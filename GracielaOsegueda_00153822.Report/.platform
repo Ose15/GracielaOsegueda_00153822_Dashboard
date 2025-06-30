@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "GracielaOsegueda_00153822"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "440752cc-9f49-4b1b-a54c-5062b76af170"
+  }
+}

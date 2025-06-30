@@ -1,0 +1,75 @@
+table Dim_Calendario
+	lineageTag: ffa97c24-5ffa-436d-8bfb-d42f66c964a9
+
+	column Fecha
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 1b9d4356-64b9-4b83-b4b4-d2338d183c1f
+		summarizeBy: none
+		sourceColumn: Fecha
+
+		variation Variation
+			isDefault
+			relationship: 5dae1d12-e196-4098-9abd-81174cdcc1ff
+			defaultHierarchy: LocalDateTable_6dfa572d-69b1-4f80-be80-a9aad75dfc52.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Año
+		dataType: int64
+		formatString: 0
+		lineageTag: 6f52c93f-a48c-4d88-8573-565bef3a9b6d
+		summarizeBy: sum
+		sourceColumn: Año
+
+		annotation SummarizationSetBy = Automatic
+
+	column Semana
+		dataType: int64
+		formatString: 0
+		lineageTag: 2a683706-7496-46c3-8f74-74558b7502d3
+		summarizeBy: sum
+		sourceColumn: Semana
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mes
+		dataType: string
+		lineageTag: de7e84e4-b84d-4d12-aa8e-90cf98959ed1
+		summarizeBy: none
+		sourceColumn: Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Numero Mes'
+		dataType: int64
+		formatString: 0
+		lineageTag: fb4e2f67-1aa6-45e9-94db-31c511a63d76
+		summarizeBy: sum
+		sourceColumn: Numero Mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column datekey
+		dataType: int64
+		formatString: 0
+		lineageTag: 27a60f99-12d5-4169-9056-87c1e9a9447b
+		summarizeBy: none
+		sourceColumn: datekey
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Dim_Calendario = m
+		mode: import
+		source =
+				let
+				    Source = Excel.Workbook(File.Contents("C:\Users\osegu\Downloads\VentasVehiculos.xlsx"), null, true),
+				    Dim_Calendario_Table = Source{[Item="Dim_Calendario",Kind="Table"]}[Data],
+				    #"Changed Type" = Table.TransformColumnTypes(Dim_Calendario_Table,{{"Fecha", type date}, {"Año", Int64.Type}, {"Semana", Int64.Type}, {"Mes", type text}, {"Numero Mes", Int64.Type}, {"datekey", Int64.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_ResultType = Table
+

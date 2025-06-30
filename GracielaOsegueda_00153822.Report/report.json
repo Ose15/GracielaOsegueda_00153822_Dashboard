@@ -1,0 +1,87 @@
+{
+  "config": "{\"version\":\"5.59\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU10\",\"version\":\"5.64\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true,\"useEnhancedTooltips\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU10",
+            "path": "BaseThemes/CY24SU10.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 1080.00,
+      "name": "4c18a0a9dfa2b4eee7f7",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2356e148e4dccdbb6bf1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":11.871917556128082,\"y\":381.5973500184026,\"z\":2000,\"width\":981.9771807140228,\"height\":315.45380934854614,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"pivotTable\",\"projections\":{\"Columns\":[{\"queryRef\":\"Fotos_Vehiculos.Version\",\"active\":true}],\"Values\":[{\"queryRef\":\"Fact_Ventas.TotalSales\"}],\"Rows\":[{\"queryRef\":\"dim_vehiculo.modelo_vehiculo\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fotos_Vehiculos\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_vehiculo\",\"Type\":0},{\"Name\":\"f1\",\"Entity\":\"Fact_Ventas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Version\"},\"Name\":\"Fotos_Vehiculos.Version\",\"NativeReferenceName\":\"Version\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"modelo_vehiculo\"},\"Name\":\"dim_vehiculo.modelo_vehiculo\",\"NativeReferenceName\":\"modelo_vehiculo\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f1\"}},\"Property\":\"TotalSales\"},\"Name\":\"Fact_Ventas.TotalSales\",\"NativeReferenceName\":\"TotalSales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"modelo_vehiculo\"}}}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 315.45,
+          "width": 981.98,
+          "x": 11.87,
+          "y": 381.60,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"3a44960b5463fc8990ea\",\"layouts\":[{\"id\":0,\"position\":{\"x\":11.666666666666668,\"y\":718.3333333333334,\"z\":4000,\"width\":711.6666666666667,\"height\":336.6666666666667,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"scatterChart\",\"projections\":{\"X\":[{\"queryRef\":\"dim_canal.tipo_canal\",\"active\":true}],\"Y\":[{\"queryRef\":\"Fact_Ventas.PrecioDePrecios\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_canal\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"Fact_Ventas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"tipo_canal\"},\"Name\":\"dim_canal.tipo_canal\",\"NativeReferenceName\":\"tipo_canal\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"PrecioDePrecios\"},\"Name\":\"Fact_Ventas.PrecioDePrecios\",\"NativeReferenceName\":\"PrecioDePrecios\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 336.67,
+          "width": 711.67,
+          "x": 11.67,
+          "y": 718.33,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"415f529cc26cb27281d6\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1028.3333333333335,\"y\":718.3333333333334,\"z\":5000,\"width\":483.33333333333337,\"height\":336.6666666666667,\"tabOrder\":5000}}],\"singleVisual\":{\"visualType\":\"pieChart\",\"projections\":{\"Y\":[{\"queryRef\":\"Fact_Ventas.TotaldeIngresos\"}],\"Category\":[{\"queryRef\":\"Dim_Vendedor.Vendedor\",\"active\":true}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fact_Ventas\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Dim_Vendedor\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TotaldeIngresos\"},\"Name\":\"Fact_Ventas.TotaldeIngresos\",\"NativeReferenceName\":\"TotaldeIngresos\"},{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Vendedor\"},\"Name\":\"Dim_Vendedor.Vendedor\",\"NativeReferenceName\":\"Vendedor\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TotaldeIngresos\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 336.67,
+          "width": 483.33,
+          "x": 1028.33,
+          "y": 718.33,
+          "z": 5000.00
+        },
+        {
+          "config": "{\"name\":\"424bd952cce2691f522f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":12.349955610646745,\"y\":64.49421263337744,\"z\":0,\"width\":463.80944404428885,\"height\":295.02671736545005,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_canal.tipo_canal\",\"active\":true}],\"Y\":[{\"queryRef\":\"Fact_Ventas.TotalSales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"dim_canal\",\"Type\":0},{\"Name\":\"f\",\"Entity\":\"Fact_Ventas\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"tipo_canal\"},\"Name\":\"dim_canal.tipo_canal\",\"NativeReferenceName\":\"Count of tipo_canal\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TotalSales\"},\"Name\":\"Fact_Ventas.TotalSales\",\"NativeReferenceName\":\"TotalSales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TotalSales\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 295.03,
+          "width": 463.81,
+          "x": 12.35,
+          "y": 64.49,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"6306bf959d9442621d8f\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1052.857142857143,\"y\":381.42857142857144,\"z\":3000,\"width\":714.2857142857143,\"height\":337.14285714285717,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"clusteredColumnChart\",\"projections\":{\"Category\":[{\"queryRef\":\"Dim_Calendario.Fecha.Variation.Date Hierarchy.Year\"},{\"queryRef\":\"Dim_Calendario.Fecha.Variation.Date Hierarchy.Quarter\"},{\"queryRef\":\"Dim_Calendario.Fecha.Variation.Date Hierarchy.Month\",\"active\":true},{\"queryRef\":\"Dim_Calendario.Fecha.Variation.Date Hierarchy.Day\"}],\"Y\":[{\"queryRef\":\"Fact_Ventas.TotalSales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fact_Ventas\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"Dim_Calendario\",\"Type\":0}],\"Select\":[{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TotalSales\"},\"Name\":\"Fact_Ventas.TotalSales\",\"NativeReferenceName\":\"TotalSales\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Year\"},\"Name\":\"Dim_Calendario.Fecha.Variation.Date Hierarchy.Year\",\"NativeReferenceName\":\"Fecha Year\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Quarter\"},\"Name\":\"Dim_Calendario.Fecha.Variation.Date Hierarchy.Quarter\",\"NativeReferenceName\":\"Fecha Quarter\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Month\"},\"Name\":\"Dim_Calendario.Fecha.Variation.Date Hierarchy.Month\",\"NativeReferenceName\":\"Fecha Month\"},{\"HierarchyLevel\":{\"Expression\":{\"Hierarchy\":{\"Expression\":{\"PropertyVariationSource\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Name\":\"Variation\",\"Property\":\"Fecha\"}},\"Hierarchy\":\"Date Hierarchy\"}},\"Level\":\"Day\"},\"Name\":\"Dim_Calendario.Fecha.Variation.Date Hierarchy.Day\",\"NativeReferenceName\":\"Fecha Day\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 337.14,
+          "width": 714.29,
+          "x": 1052.86,
+          "y": 381.43,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"e8b4b0055ef36348ded1\",\"layouts\":[{\"id\":0,\"position\":{\"x\":568.5714285714286,\"y\":22.857142857142858,\"z\":1000,\"width\":714.2857142857143,\"height\":337.14285714285717,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"clusteredBarChart\",\"projections\":{\"Category\":[{\"queryRef\":\"dim_vehiculo.modelo_vehiculo\",\"active\":true}],\"Y\":[{\"queryRef\":\"Fact_Ventas.TotalSales\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"Fact_Ventas\",\"Type\":0},{\"Name\":\"d\",\"Entity\":\"dim_vehiculo\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"modelo_vehiculo\"},\"Name\":\"dim_vehiculo.modelo_vehiculo\",\"NativeReferenceName\":\"Modelo de vehículo\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TotalSales\"},\"Name\":\"Fact_Ventas.TotalSales\",\"NativeReferenceName\":\"TotalSales\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"TotalSales\"}}}]},\"columnProperties\":{\"dim_vehiculo.modelo_vehiculo\":{\"displayName\":\"Modelo de vehículo\"}},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 337.14,
+          "width": 714.29,
+          "x": 568.57,
+          "y": 22.86,
+          "z": 1000.00
+        }
+      ],
+      "width": 3000.00
+    }
+  ]
+}
